@@ -3,3 +3,9 @@
 
 # Ignore Gradle build output directory
 build
+
+# Add From Here
+**/*Zone.Identifier
+**/**/gradle-wrapper.jar
+**/**/gradle-wrapper.properties
+settings.json

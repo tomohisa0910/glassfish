@@ -22,12 +22,10 @@ dependencies {
     implementation(project(":utilities"))
 
 
+    implementation(libs.jakartaee.api)
+    implementation(libs.bundles.jakarta.faces)
 
-
-    implementation(libs.faces.api)
     testImplementation(libs.bundles.test)
-    providedCompile(libs.cdi.api)
-    providedCompile(libs.servlet.api)
 }
 
 application {
@@ -41,7 +39,7 @@ java {
     }
 }
 tasks.war {
-    archiveExtension.set("app.war")
+    archiveFileName.set("app.war")
 }
 
 tasks.javadoc {
