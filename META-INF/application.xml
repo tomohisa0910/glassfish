@@ -1,0 +1,27 @@
+<!DOCTYPE application PUBLIC "-//Sun Microsystems, 
+Inc.//DTD J2EE Application 1.3//EN"
+"http://java.sun.com/dtd/application_1_3.dtd">
+<application>
+  <icon>
+    <small-icon></small-icon>
+    <large-icon></large-icon>
+  </icon>
+  <display-name>Enterprise App</display-name>
+  <description>
+    アプリケーションに関する説明文です。
+  </description>
+  <module>
+    <alt-dd></alt-dd>
+    <connector></connector>
+    <ejb></ejb>
+    <java></java>
+    <web></web>
+  </module>
+  <security-role>
+    <description>
+      セキュリティ ロールの説明文。
+    </description>
+    <role-name>
+    </role-name>
+  <\security-role>
+</application>

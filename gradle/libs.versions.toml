@@ -8,7 +8,7 @@ junit-jupiter = {module = "org.junit.jupiter:junit-jupiter", version.ref = "juni
 mockito = {module = "org.mockito:mockito-core", version = "5.16.1"}
 mockito-inline = {module = "org.mockito:inline", version ="2.20.0"}
 
-jakartaee-api = {module = "jakarta.platform:jakarta.jakartaee-api", version = "10.0.0"}
+jakartaee-api = {module = "jakarta.platform:jakarta.jakartaee-api", version = "11.0.0-RC1"}
 faces-api = {module = "jakarta.faces:jakarta.faces-api", version = "4.1.2"}
 jakarta-faces = {module = "org.glassfish:jakarta.faces", version = "4.1.3"}
 
