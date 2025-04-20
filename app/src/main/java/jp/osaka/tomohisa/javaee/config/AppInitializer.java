@@ -1,16 +1,19 @@
-package jp.osaka.tomohisa.javaee.backing;
+package jp.osaka.tomohisa.javaee.config;
 
 import java.time.LocalDateTime;
 
-import jakarta.enterprise.context.RequestScoped;
-import jakarta.inject.Named;
+import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.context.ApplicationScoped;
 
-@Named
-@RequestScoped
-class MyBean {
-
+@ApplicationScoped
+class AppInitializer {
     private String initMessage = "アプリケーションは正常に起動しました。";
     private  LocalDateTime initTime= LocalDateTime.now();
+
+    @PostConstruct
+    public void init() {
+        System.err.println(initMessage);
+    }
 
     public String getInitMessage() {
         return this.initMessage;
