@@ -1,0 +1,39 @@
+<configuration>
+  <!-- ファイル出力用のAppender -->
+  <appender name="ROLLING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- 出力先のファイル名を指定 -->
+    <file>app.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <!-- ファイルの最大サイズを指定 -->
+      <maxFileSize>1GB</maxFileSize>
+      <!-- ローテーションされたファイルの名前を指定 -->
+      <fileNamePattern>app.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <!-- 保存するローテーションファイルの最大数 -->
+      <maxHistory>10</maxHistory>
+    </rollingPolicy>
+    <encoder>
+      <pattern>
+        %date %level [%thread] %logger{10} [%file:%line] %msg%n
+      </pattern>
+    </encoder>
+  </appender>
+
+  <!-- コンソール出力用のAppender -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>
+        %date %level [%thread] %logger{10} [%file:%line] %msg%n
+      </pattern>
+    </encoder>
+  </appender>
+
+  <logger name="jp.osaka.tomohisa.javaee" level="INFO">
+    <appender-ref ref="ROLLING_FILE" />
+    <appender-ref ref="STDOUT" />
+  </logger>
+
+  <root>
+    <appender-ref ref="ROLLING_FILE" />
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>

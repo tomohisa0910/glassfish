@@ -21,6 +21,7 @@ dependencies {
     implementation("org.apache.commons:commons-text")
     implementation(project(":utilities"))
 
+    implementation(libs.bundles.logback)
 
     implementation(libs.jakartaee.api)
     implementation(libs.bundles.jakarta.faces)

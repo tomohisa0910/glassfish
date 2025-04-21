@@ -1,9 +1,9 @@
-package jp.osaka.tomohisa.javaee.model;
+package jp.osaka.tomohisa.javaee.backing;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
 
-@Named
+@Named("hello")
 @RequestScoped
 public class Hello {
 
