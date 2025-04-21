@@ -23,6 +23,8 @@ dependencies {
 
     implementation(libs.bundles.logback)
 
+    implementation(libs.bundles.deltaspike)
+
     implementation(libs.jakartaee.api)
     implementation(libs.bundles.jakarta.faces)
 

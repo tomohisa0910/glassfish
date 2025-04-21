@@ -17,12 +17,16 @@
         <h6>処理一覧</h6>
         <ul class="list-group">
             <li class="list-group-item">
-                <h:link value="page1" outcome="/static/page1.xhtml"/>
+                <h:link class="btn btn-primary" value="Go" outcome="/static/page1.xhtml"/>
                 静的ファイルを表示
             </li>
             <li class="list-group-item">
-                <h:link value="Hello Page" outcome="/views/hello"/>
+                <h:link class="btn btn-primary" value="Go" outcome="/views/hello"/>
                 バッキングBean内でメッセージ生成
+            </li>
+            <li class="list-group-item">
+                <h:link class="btn btn-danger" value="作成中" outcome="/views/hello"/>
+                サービス呼び出しによるメッセージ生成
             </li>
         </ul>
     </div>

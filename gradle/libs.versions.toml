@@ -2,6 +2,7 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 [versions]
 junit-jupiter = "5.12.1"
+deltaspike = "2.0.0"
 
 [libraries]
 logback-classic = {module = "ch.qos.logback:logback-classic", version = "1.5.18"}
@@ -15,7 +16,13 @@ jakartaee-api = {module = "jakarta.platform:jakarta.jakartaee-api", version = "1
 faces-api = {module = "jakarta.faces:jakarta.faces-api", version = "4.1.2"}
 jakarta-faces = {module = "org.glassfish:jakarta.faces", version = "4.1.3"}
 
+deltaspike-core-api = {module = "org.apache.deltaspike.core:deltaspike-core-api", version.ref = "deltaspike"}
+deltaspike-core-impl = {module = "org.apache.deltaspike.core:deltaspike-core-impl", version.ref = "deltaspike"}
+deltaspike-jsf-module-api = {module = "org.apache.deltaspike.modules:deltaspike-jsf-module-api", version.ref = "deltaspike"}
+
+
 [bundles]
 test = ["junit-jupiter", "mockito", "mockito-inline"]
 jakarta-faces = ["faces-api", "jakarta-faces"]
 logback = ["logback-classic", "logback-core"]
+deltaspike = ["deltaspike-core-api", "deltaspike-core-impl", "deltaspike-jsf-module-api"]
