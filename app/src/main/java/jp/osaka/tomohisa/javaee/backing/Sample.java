@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
+import jp.osaka.tomohisa.javaee.annotation.GreetingType;
 import jp.osaka.tomohisa.javaee.service.Greeting;
 import lombok.Data;
 
@@ -31,7 +32,7 @@ public class Sample {
 
     /** コンストラクタ. */
     @Inject
-    public Sample(Greeting greeting) {
+    public Sample(@GreetingType Greeting greeting) {
         logger.info("コンストラクタ");
         this.greeting = greeting;
         if (this.greeting == null) {
@@ -43,7 +44,7 @@ public class Sample {
 
     public void createMessage() {
         this.message = greeting.greeting(name);
-        logger.info("this.greeting :" + this.greeting.toString());
+        logger.info("this.greeting.getMessage() :" + this.getMessage());
     }
 
 }
