@@ -1,31 +1,49 @@
 package jp.osaka.tomohisa.javaee.backing;
 
-import jakarta.inject.Inject;
-import jp.osaka.tomohisa.javaee.service.Greeting;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-// @Named("sample")
-// @RequestScoped
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+import jp.osaka.tomohisa.javaee.service.Greeting;
+import lombok.Data;
+
+@Data
+@Named("sample")
+@RequestScoped
 public class Sample {
-    @Inject
+    /** ロガー. */
+    private static Logger logger = LoggerFactory.getLogger(Sample.class);
+
+    /** サービス. */
     private Greeting greeting;
 
+    /** 名前. */
     private String name;
 
+    /** メッセージ. */
     private String message;
 
+    /** デフォルトコンストラクタ. */
+    public Sample() {
+    }
+
+    /** コンストラクタ. */
+    @Inject
+    public Sample(Greeting greeting) {
+        logger.info("コンストラクタ");
+        this.greeting = greeting;
+        if (this.greeting == null) {
+            logger.info("this.greeting is NULL");
+        } else {
+            logger.info("this.greeting :" + this.greeting.toString());
+        }
+    }
+
     public void createMessage() {
-        greeting.greeting(name);
-    }
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getMessage() {
-        return message;
+        this.message = greeting.greeting(name);
+        logger.info("this.greeting :" + this.greeting.toString());
     }
 
 }
