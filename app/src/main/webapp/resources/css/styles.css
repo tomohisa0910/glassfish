@@ -1,0 +1,39 @@
+/* h1タグに適用するスタイル */
+div #header_row #header h1 {
+    color: #4b0082; /* テキストの色を指定 */
+    font-size: 2.5em; /* フォントサイズを指定 */
+    font-weight: bold; /* 太字にする */
+    text-shadow: 2px 2px 4px #888888; /* テキストに影を付ける */
+    margin: 10px 0; /* マージンを設定 */
+}
+
+div .row {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 10px;
+    padding-right: 20px; /* 右側に余白を設定 */
+    box-sizing: border-box; /* ボックスのサイズ計算を調整 */
+    overflow-x: hidden; /* 水平スクロールバーを非表示 */
+}
+
+
+#menu {
+    background-color: #98fb98; /* 背景色 */
+    padding: 10px; /* 内側の余白 */
+}
+
+#content {
+    background-color: #f5f5f5; /* 背景色 */
+    padding: 10px; /* 内側の余白 */
+    padding-right: 10px;
+
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 10px;
+    box-sizing: border-box; /* ボックスのサイズ計算を調整 */
+    overflow-x: hidden; /* 水平スクロールバーを非表示 */
+}
+
+#footer {
+
+}
